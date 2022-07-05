@@ -1,4 +1,4 @@
-import { XoState } from "./XoState"
+import { move, XoState } from "./XoState"
 
 export const XoButton = (props: {
     state: XoState,
@@ -7,10 +7,7 @@ export const XoButton = (props: {
 }) => {
 
     const handleClick = () => {
-        const state = props.state;
-        state.board[props.idx] = state.currentPlayer;
-        state.currentPlayer = state.currentPlayer === "X" ? "O" : "X";
-        props.setState({...state});
+        props.setState(move(props.state, props.idx));
     }
 
     const background = props.state.board[props.idx] !== '' ? 'yellow' : '';
