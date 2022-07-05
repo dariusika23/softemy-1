@@ -4,18 +4,18 @@
 
 const NOBODY = '';
 
-class Player  {
-    constructor(name, path) {
-        this.name;
-        this.path;
-    } 
-}
+// class Player  {
+//     constructor(name, path) {
+//         this.name;
+//         this.path;
+//     } 
+// }
 
-const XPlayer = new Player("X", "<img src=\"assets/img/x.png\" with=\"40\" height=\"40\" alt=\"X\">");
-const OPlayer = new Player("O", "<img src=\"assets/img/o.png\" with=\"40\" height=\"40\" alt=\"0\">");
+// const XPlayer = new Player("X", "<img src=\"assets/img/x.png\" with=\"40\" height=\"40\" alt=\"X\">");
+// const OPlayer = new Player("O", "<img src=\"assets/img/o.png\" with=\"40\" height=\"40\" alt=\"0\">");
 
-// const XPlayer = "<img src=\"assets/img/x.png\" with=\"40\" height=\"40\" alt=\"X\">";
-// const OPlayer = "<img src=\"assets/img/o.png\" with=\"40\" height=\"40\" alt=\"0\">";
+const XPlayer = "<img src=\"assets/img/x.png\" with=\"40\" height=\"40\" alt=\"X\">";
+const OPlayer = "<img src=\"assets/img/o.png\" with=\"40\" height=\"40\" alt=\"0\">";
 
 const WINNING_LINES = [
     [0, 1, 2],
@@ -51,7 +51,7 @@ class Game {
             return;
         }
 
-        this.board[index] = this.currentPlayer.path;
+        this.board[index] = this.currentPlayer;
         this.switchPlayer();
         this.checkWinner();
         this.notifyGameUpdated();
